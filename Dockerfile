@@ -1,5 +1,5 @@
 FROM arm32v6/alpine:3.7
-RUN apk add --no-cache curl \
+RUN apk add --no-cache curl nano \
     && cd /tmp/ \
     && curl -L https://sybdata.de/files/public-docs/AceStream_3.1.29_py2.7.14_webUI_ARMv8l.tar.gz -o acestream_rpi.tar.gz \
     && tar xzfv acestream_rpi.tar.gz \
