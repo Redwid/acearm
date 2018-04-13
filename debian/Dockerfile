@@ -10,6 +10,7 @@ EXPOSE 8621 62062 6878 8000
 RUN \
 apt-get update -y && \
 apt-get install -y \
+wget \
 mc \
 nano \
 htop \
