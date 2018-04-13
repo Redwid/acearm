@@ -6,7 +6,7 @@ RUN apk add --no-cache wget mc nano \
     && tar xzfv acestream_3.1.28_py2.7.14_webUI_ARMv8l.tar.gz \
     && rm -rf acestream_3.1.28_py2.7.14_webUI_ARMv8l.tar.gz
 RUN mv /tmp/acestream.engine /tmp/acestream
-RUN mkdir -p /system/etc \
+RUN mkdir -p /system/ \
     && mkdir -p /storage \
     && mv /tmp/acestream/androidfs/system/* /system/ \
     && find /system -type d -exec chmod 755 {} \; \
