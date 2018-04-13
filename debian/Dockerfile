@@ -10,31 +10,25 @@ EXPOSE 8621 62062 6878 8000
 RUN \
 apt-get update -y && \
 apt-get install -y \
-wget \
 mc \
 nano \
 htop \
-curl \
-unzip \
-python-gevent \
-python-pip \
-python-dev \
-gcc && \
-pip install --upgrade pip && \
-pip install psutil --upgrade && \
-pip install gevent --upgrade && \
-apt-get remove \
-gcc \
-python-pip \
-python-dev && \
-apt-get autoremove && \
-
+curl && \
 #acestream
-wget -o - https://sybdata.de/files/public-docs/acestream.zip -O acestream.zip && \
-unzip acestream.zip -d /opt/ && \
-curl -sSL https://raw.githubusercontent.com/sybdata/acestream/master/acestream.service > /etc/systemd/system/acestream.service && \
-chmod +x /opt/acestream/acestream.engine/acestream.start && \
-chmod +x /opt/acestream/acestream.engine/acestream.stop && \
+curl -L https://sybdata.de/files/public-docs/AceStream_3.1.29_py2.7.14_webUI_ARMv8l.tar.gz -o acestream_rpi.tar.gz && \
+tar xzfv acestream_rpi.tar.gz && \
+rm -rf acestream_rpi.tar.gz && \
+mv /tmp/acestream.engine /tmp/acestream && \
+mkdir -p /system/ && \
+mkdir -p /storage && \
+mv /tmp/acestream/androidfs/system/* /system/ && \
+find /system -type d -exec chmod 755 {} \; && \
+find /system -type f -exec chmod 644 {} \; && \
+mv /tmp/acestream/androidfs/acestream.engine/ / && \
+chmod 755 /system/bin/* /acestream.engine/python/bin/python && \
+echo "67.215.246.10 router.bittorrent.com" >> /etc/hosts && \
+echo "212.129.33.59 dht.transmissionbt.com" >> /etc/hosts && \
+echo "87.98.162.88 dht.transmissionbt.com" >> /etc/hosts
 # install HTTPAceProxy
 wget -o - https://github.com/pepsik-kiev/HTTPAceProxy/archive/master.zip -O aceproxy.zip && \ 
 unzip aceproxy.zip -d /opt/ && \
@@ -45,3 +39,4 @@ apt-get clean && \
 rm -rf /tmp/* /var/tmp/*
 
 WORKDIR /
+CMD ["/system/bin/acestream.sh"]
