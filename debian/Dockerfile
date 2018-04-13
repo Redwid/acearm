@@ -29,7 +29,7 @@ mv /tmp/acestream/androidfs/acestream.engine/ / && \
 chmod 755 /system/bin/* /acestream.engine/python/bin/python && \
 echo "67.215.246.10 router.bittorrent.com" >> /etc/hosts && \
 echo "212.129.33.59 dht.transmissionbt.com" >> /etc/hosts && \
-echo "87.98.162.88 dht.transmissionbt.com" >> /etc/hosts
+echo "87.98.162.88 dht.transmissionbt.com" >> /etc/hosts && \
 # install HTTPAceProxy
 wget -o - https://github.com/pepsik-kiev/HTTPAceProxy/archive/master.zip -O aceproxy.zip && \ 
 unzip aceproxy.zip -d /opt/ && \
