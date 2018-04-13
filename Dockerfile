@@ -1,7 +1,7 @@
 FROM arm32v6/alpine:3.7
 RUN apk add --no-cache curl \
     && cd /tmp/ \
-    && curl -L https://sybdata.de/files/public-docs/acestream_3.1.28_py2.7.14_webUI_ARMv8l.tar.gz -o acestream_rpi.tar.gz \
+    && curl -L https://sybdata.de/files/public-docs/AceStream_3.1.29_py2.7.14_webUI_ARMv8l.tar.gz -o acestream_rpi.tar.gz \
     && tar xzfv acestream_rpi.tar.gz \
     && rm -rf acestream_rpi.tar.gz
 RUN mv /tmp/acestream.engine /tmp/acestream
