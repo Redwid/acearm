@@ -2,7 +2,7 @@ FROM arm32v6/alpine:3.7
 
 RUN apk add --no-cache wget \
     && cd /tmp/ \
-    && wget https://sybdata.de/files/public-docs/acestream_3.1.28_py2.7.14_webUI_ARMv8l.tar.gz \
+    && wget -o - https://sybdata.de/files/public-docs/acestream_3.1.28_py2.7.14_webUI_ARMv8l.tar.gz \
     && tar xzfv acestream_3.1.28_py2.7.14_webUI_ARMv8l.tar.gz \
     && rm -rf acestream_3.1.28_py2.7.14_webUI_ARMv8l.tar.gz
 RUN mv /tmp/acestream.engine /tmp/acestream
