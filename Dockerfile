@@ -10,4 +10,4 @@ RUN find /acestream.engine/androidfs/system -type d -exec chmod 755 {} \; \
     && chmod 755 /acestream.engine/androidfs/system/bin/* /acestream.engine/androidfs/acestream.engine/python/bin/python \
     && rm -rf /tmp/* 
 EXPOSE 6878 62062 8621
-CMD ["/acestream.engine/acestream.start"]
+COPY root/ /
