@@ -21,4 +21,4 @@ $ docker run --privileged -d -e PUID=0 -e PGID=0 --name acepi -p 8621:8621 -p 62
 
 ![pidock](https://user-images.githubusercontent.com/24189833/38767729-4adaaec0-3fe7-11e8-8952-e6ea6f7e7744.png)
 
-![acerpi1](https://user-images.githubusercontent.com/24189833/38751877-af842fd8-3f59-11e8-8b9b-4977cb406975.png)
+
