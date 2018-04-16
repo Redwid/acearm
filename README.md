@@ -23,7 +23,7 @@ $ docker run --privileged -d -e PUID=0 -e PGID=0 --name acepi -p 8621:8621 -p 62
 
 * https://paste.ee/p/ZofDu
 
-
+![pidoc66](https://user-images.githubusercontent.com/24189833/38827151-4b004406-41b2-11e8-902e-cc6d27972ecc.png)
 
 
 ![pidock](https://user-images.githubusercontent.com/24189833/38767729-4adaaec0-3fe7-11e8-8952-e6ea6f7e7744.png)
