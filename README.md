@@ -1,4 +1,4 @@
-# acestream + HTTPAceProxy for arm7/8
+# acestream + HTTPAceProxy for ARMv7/8
 
 ![pidoc66a](https://user-images.githubusercontent.com/24189833/38827684-fd660e36-41b3-11e8-892a-e49f24e935c3.png)
 
