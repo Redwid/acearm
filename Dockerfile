@@ -1,7 +1,4 @@
 FROM lsiobase/alpine.armhf
-
-LABEL architecture="ARMv7"
-
 RUN apk add --no-cache curl nano git python2 py-gevent py-psutil \
     && cd /tmp/ \
     && curl -L https://sybdata.de/files/public-docs/AceStream_3.1.29_py2.7.14_webUI_ARMv8l.tar.gz -o acestream_rpi.tar.gz \
