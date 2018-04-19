@@ -11,7 +11,7 @@ $ git clone https://github.com/sybdata/acearm.git
 $ cd acearm/
 $ docker build -t sybdata/acearm .
 $ id <dockeruser>
-$ docker run --privileged -d -e PUID=0 -e PGID=0 --name aceproxy -p 8621:8621 -p 62062:62062 -p 6878:6878 -p 8000:8000 sybdata/acearm
+$ docker run --privileged -d --restart always -e PUID=0 -e PGID=0 --name aceproxy -p 8621:8621 -p 62062:62062 -p 6878:6878 -p 8000:8000 sybdata/acearm
 ```
 ## info
 
