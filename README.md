@@ -38,6 +38,7 @@ $ docker run --privileged -d --restart always -e PUID=0 -e PGID=0 --name aceprox
 Запрос:
 ```
 http://127.0.0.1:6878/playlist/get?format=m3u
+http://192.168.178.37:6868/playlist/get?format=m3u&subcategory=films
 ```
 Отклик:
 ```
