@@ -32,4 +32,28 @@ $ docker run --privileged -d --restart always -e PUID=0 -e PGID=0 --name aceprox
 
 ![piace](https://user-images.githubusercontent.com/24189833/38771057-7540bca6-401c-11e8-82b4-1087c1464fc2.png)
 
+## Playlist API
 
+#### Получить плейлист в формате «m3u»:
+Запрос:
+```
+http://127.0.0.1:6878/playlist/get?format=m3u
+```
+Отклик:
+```
+#EXTM3U
+#EXTINF:-1 tvg-name="Nickelodeon HD (Детские)",Nickelodeon HD (Детские)
+http://192.168.178.37:6868/ace/getstream?id=4d416469be3aacf42f5f741897755e57a6488619&hlc=1&transcode_audio=0&transcode_mp3=0&transcode_ac3=0&preferred_audio_language=eng
+#EXTINF:-1 tvg-name="RIK HD (Детские)",RIK HD (Детские)
+http://192.168.178.37:6868/ace/getstream?id=1f7f3085b931f04059aca566ceb1545b528ce972&hlc=1&transcode_audio=0&transcode_mp3=0&transcode_ac3=0&preferred_audio_language=eng
+#EXTINF:-1 tvg-name="Ералаш HD (Детские)",Ералаш HD (Детские)
+http://192.168.178.37:6868/ace/getstream?id=a5e195e586dc299c8c9815d55e929c54a9a26add&hlc=1&transcode_audio=0&transcode_mp3=0&transcode_ac3=0&preferred_audio_language=eng
+#EXTINF:-1 tvg-name="Карапуз ТВ HD (Детские)",Карапуз ТВ HD (Детские)
+http://192.168.178.37:6868/ace/getstream?id=3c2ef7327b383901b518a5ce10b9a7d90a011cd2&hlc=1&transcode_audio=0&transcode_mp3=0&transcode_ac3=0&preferred_audio_language=eng
+#EXTINF:-1 tvg-name="Мультик HD (Детские)",Мультик HD (Детские)
+http://192.168.178.37:6868/ace/getstream?id=15a7cba440df66918bef099645f74942185ca118&hlc=1&transcode_audio=0&transcode_mp3=0&transcode_ac3=0&preferred_audio_language=eng
+#EXTINF:-1 tvg-name="Рыжий HD (Детские)",Рыжий HD (Детские)
+http://192.168.178.37:6868/ace/getstream?id=62340cc78ec7bc339f91012a4da8f04725cc15e7&hlc=1&transcode_audio=0&transcode_mp3=0&transcode_ac3=0&preferred_audio_language=eng
+#EXTINF:-1 tvg-name="Den of Thieves" group-title="films" acestream-mediainfo-container="Matroska" acestream-mediainfo-video-codec="AVC" acestream-mediainfo-audio-codec="AC3",Den of Thieves
+http://192.168.178.37:6868/ace/getstream?infohash=4c9a867f5780a257e20f179f9136a6358b26aaf1&hlc=1&transcode_audio=0&transcode_mp3=0&transcode_ac3=0&preferred_audio_language=eng
+```
