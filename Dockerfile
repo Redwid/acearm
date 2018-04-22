@@ -1,7 +1,7 @@
 FROM lsiobase/alpine.armhf
 RUN apk add --no-cache curl nano git python2 py-gevent py-psutil \
     && cd /tmp/ \
-    && curl -L https://sybdata.de/files/public-docs/AceStream_3.1.29_py2.7.14_webUI_ARMv8l.tar.gz -o acestream_rpi.tar.gz \
+    && curl -L https://f002.backblazeb2.com/file/acestream/acestream_3.1.30_Py2.7.14_webUI_ARMv8l.tar.gz -o acestream_rpi.tar.gz \
     && tar xzfv acestream_rpi.tar.gz \
     && rm -rf acestream_rpi.tar.gz
 RUN mv /tmp/acestream.engine/ /
