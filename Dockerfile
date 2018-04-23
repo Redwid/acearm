@@ -9,6 +9,7 @@ RUN find /acestream.engine/androidfs/system -type d -exec chmod 755 {} \; \
     && find /acestream.engine/androidfs/system -type f -exec chmod 644 {} \; \
     && chmod 755 /acestream.engine/androidfs/system/bin/* /acestream.engine/androidfs/acestream.engine/python/bin/python \
     && rm -rf /tmp/* \
-    && cd / && git clone https://github.com/pepsik-kiev/HTTPAceProxy.git
+    && cd / && git clone https://github.com/pepsik-kiev/HTTPAceProxy.git \
+    && mkdir -p /mnt/films/
 EXPOSE 6878 62062 8621 8000
 COPY root/ /
