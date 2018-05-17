@@ -68,3 +68,5 @@ http://192.168.178.37:6868/ace/getstream?infohash=4c9a867f5780a257e20f179f9136a6
 #EXTINF:-1 tvg-name="Убийство Джоан" group-title="films" acestream-mediainfo-container="Matroska" acestream-mediainfo-video-codec="AVC" acestream-mediainfo-audio-codec="AC3",Убийство Джоан
 http://192.168.178.37:6868/ace/getstream?infohash=cca7e2dead80951c7dafc81669bf15d06b245662&hlc=1&transcode_audio=0&transcode_mp3=0&transcode_ac3=0&preferred_audio_language=eng
 ```
+![hlsp3](https://user-images.githubusercontent.com/24189833/40187317-8cdeff54-59f7-11e8-9061-35f074f22f50.png)
+![hlsp3a](https://user-images.githubusercontent.com/24189833/40187400-b1eee3ae-59f7-11e8-96b7-170c8ba0a027.png)
