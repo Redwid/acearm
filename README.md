@@ -23,6 +23,63 @@ $ docker run --privileged -d --restart always -e PUID=0 -e PGID=0 --name aceprox
 * https://paste.ee/p/WRjtL
 * https://paste.ee/p/3fNxl
 
+```
+nano /acestrem.engine/acestream.log
+```
+```
+Using python 2.7.15 .....
+Try to load conf file: /acestream.engine/acestream.conf
+Start AceStream engine .....
+Load library: /acestream.engine/eggs/six-1.11.0-py2.7.egg
+Load library: /acestream.engine/eggs/html5lib-1.1.dev0-py2.7.egg
+Load library: /acestream.engine/eggs/futures-3.2.0-py2.7.egg
+Load library: /acestream.engine/eggs/repoze.lru-0.7-py2.7.egg
+Load library: /acestream.engine/eggs/websocket_client-0.46.0-py2.7.egg
+Load library: /acestream.engine/eggs/dnspython-1.16.0-py2.7.egg
+Load library: /acestream.engine/eggs/xmltodict-0.11.0-py2.7.egg
+Load library: /acestream.engine/eggs/iso8601-0.1.12-py2.7.egg
+Load library: /acestream.engine/eggs/certifi-2018.4.16-py2.7.egg
+Load library: /acestream.engine/eggs/pkg_resources.egg
+Load library: /acestream.engine/eggs/urllib3-1.23-py2.7.egg
+Load library: /acestream.engine/eggs/beautifulsoup4-4.6.0-py2.7.egg
+Load library: /acestream.engine/eggs/idna-2.7-py2.7.egg
+Load library: /acestream.engine/eggs/requests-2.19.1-py2.7.egg
+Load library: /acestream.engine/eggs/chardet-4.0.0-py2.7.egg
+Load library: /acestream.engine/eggs/webencodings-0.5.1-py2.7.egg
+Load library: /acestream.engine/eggs/singledispatch-3.4.0.3-py2.7.egg
+Load library: /acestream.engine/eggs/opengraph-0.5-py2.7.egg
+Load library: /acestream.engine/eggs/Routes-2.4.1-py2.7.egg
+Load library: /acestream.engine/eggs/enum34-1.1.6-py2.7.egg
+2018-09-23 15:12:15,657|MainThread|acestream|language=english
+2018-09-23 15:12:15,659|MainThread|acestream|exec_dir='/acestream.engine'
+2018-09-23 15:12:15,659|MainThread|acestream|logs_dir='/acestream.engine'
+2018-09-23 15:12:15,660|MainThread|acestream|install_dir='/acestream.engine'
+2018-09-23 15:12:15,669|MainThread|acestream|init segmenter done: log_path=/acestream.engine/segmenter.log
+2018-09-23 15:12:15,669|MainThread|acestream|platform=android
+2018-09-23 15:12:15,670|MainThread|acestream|app=acestream
+2018-09-23 15:12:15,671|MainThread|acestream|version=3.1.33 code=3013300 revision=dba3ac6 date=2018-09-14
+2018-09-23 15:12:15,671|MainThread|acestream|use_local_db=True
+2018-09-23 15:12:15,672|MainThread|acestream|use_m2crypto=False
+2018-09-23 15:12:15,672|MainThread|acestream|is_gui_mode=0
+2018-09-23 15:12:15,673|MainThread|acestream|enable debug: 0
+2018-09-23 15:12:15,675|MainThread|acestream|get_default_api_version: 2
+2018-09-23 15:12:15,676|MainThread|acestream.coreapp|use fixed i2i_port: 62062
+2018-09-23 15:12:15,676|MainThread|acestream.coreapp|state_dir='/acestream.engine/.ACEStream'
+2018-09-23 15:12:15,931|MainThread|acestream.coreapp|set_debug_from_ui: enabled=0
+2018-09-23 15:12:15,932|MainThread|acestream|enable debug: 0
+2018-09-23 15:12:15,962|MainThread|acestream.coreapp|cannot load session config, use default
+2018-09-23 15:12:15,975|MainThread|acestream.SocketHandler.InterruptSocket|bound on 127.0.0.1:51518
+2018-09-23 15:12:15,976|MainThread|acestream.SocketHandler.SocketHandler|bind: socket bound: host=0.0.0.0 port=9955
+2018-09-23 15:12:15,976|MainThread|acestream.LM|listen on 9955
+2018-09-23 15:12:15,977|MainThread|acestream.localdb|No existing database found. Attempting to creating a new database '/acestream.engine/.ACEStream/sqlite/torrentstream.sdb'
+2018-09-23 15:12:16,586|MainThread|acestream.VideoServer|start: addr= port=6878 allow_remote=1 allow_intranet=1
+2018-09-23 15:12:16,592|MainThread|acestream.VideoServer|start: addr= port=6879 allow_remote=1 allow_intranet=1
+2018-09-23 15:12:17,025|ServiceTaskQueueThread-2|acestream.Session|sync_time: no response
+2018-09-23 15:12:17,036|MainThread|acestream.SocketHandler.InterruptSocket|bound on 127.0.0.1:52766
+2018-09-23 15:12:17,040|MainThread|acestream.SocketHandler.SocketHandler|bind: socket bound: host=0.0.0.0 port=62062
+2018-09-23 15:12:17,041|Instance2InstanceThread-26|acestream.APIServer|run: ready to receive remote commands on 62062
+2018-09-23 15:12:18,227|Timer-Thread-30|acestream.utils|get_whois_data: missing ipwhois
+```
 ## add HTTPAceProxy
 
 * https://paste.ee/p/ZofDu
