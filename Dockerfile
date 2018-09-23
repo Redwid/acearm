@@ -7,7 +7,7 @@ RUN apk add --no-cache curl nano git python2 py-gevent py-psutil \
 RUN mv /tmp/acestrem.engine/ /
 RUN find /acestrem.engine/androidfs/system -type d -exec chmod 755 {} \; \
     && find /acestrem.engine/androidfs/system -type f -exec chmod 644 {} \; \
-    && chmod 755 /acestrem.engine/androidfs/system/bin/* /androidfs/acestream.engine/python/bin/python \
+    && chmod 755 /acestrem.engine/androidfs/system/bin/* /acestrem.engine/androidfs/acestream.engine/python/bin/python \
     && rm -rf /tmp/* \
     && cd / && git clone https://github.com/pepsik-kiev/HTTPAceProxy.git \
     && mkdir -p /mnt/films/
