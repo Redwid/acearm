@@ -13,3 +13,4 @@ RUN find /acestrem.engine/androidfs/system -type d -exec chmod 755 {} \; \
     && mkdir -p /mnt/films/
 EXPOSE 6878 62062 8621 8000
 COPY root/ /
+RUN chmod +x /acestrem.engine/start.sh
