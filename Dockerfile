@@ -2,7 +2,7 @@ FROM lsiobase/alpine.armhf:3.8
 RUN apk add --no-cache curl nano git python2 py-psutil \
     && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
     && python get-pip.py \
-    && apk add --no-cache --virtual=build-dependencies g++ gcc make python2.7-dev build-base \
+    && apk add --no-cache --virtual=build-dependencies g++ gcc make python2-dev build-base \
     && pip install --no-binary gevent gevent \
     && cd /tmp/ \
     && curl -L https://sybdata.de/files/public-docs/acestream_3.1.33_py2.7.15_webUI_ARMv7.tar.gz -o acestream_rpi.tar.gz \
