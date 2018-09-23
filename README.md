@@ -22,9 +22,11 @@ $ docker run --privileged -d --restart always -e PUID=0 -e PGID=0 --name aceprox
 * https://paste.ee/p/zOKoU
 * https://paste.ee/p/WRjtL
 * https://paste.ee/p/3fNxl
-
 ```
-nano /acestrem.engine/acestream.log
+tail -f -n 10 /tmp/acehttp.log
+```
+```
+tail -f -n 50 /acestrem.engine/acestream.log
 ```
 ```
 Using python 2.7.15 .....
