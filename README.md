@@ -13,6 +13,9 @@ $ docker build -t sybdata/acearm .
 $ id <dockeruser>
 $ docker run --privileged -d --restart always -e PUID=0 -e PGID=0 --name aceproxy -p 8621:8621 -p 62062:62062 -p 6878:6878 -p 8000:8000 sybdata/acearm
 ```
+![te456b](https://user-images.githubusercontent.com/24189833/47622599-1649f600-db07-11e8-8b32-d8d0b06f6a97.gif)
+
+
 ## info
 
 * Shell access whilst the container is running: `docker exec -it acepi /bin/sh`
