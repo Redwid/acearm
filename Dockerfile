@@ -14,7 +14,7 @@ RUN find /acestrem.engine/androidfs/system -type d -exec chmod 755 {} \; \
     && chmod 755 /acestrem.engine/androidfs/system/bin/* /acestrem.engine/androidfs/acestream.engine/python/bin/python \
     && rm -rf /tmp/* \
     && apk del --purge build-dependencies \
-    && cd / && git clone https://github.com/pepsik-kiev/HTTPAceProxy.git \
+    && cd / && git clone https://github.com/pepsik-kiev/HTTPAceProxy.git
 EXPOSE 6878 62062 8621 8000
 COPY root/ /
 RUN chmod +x /acestrem.engine/start.sh
