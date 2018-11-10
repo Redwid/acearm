@@ -21,6 +21,7 @@ $ docker run --privileged -d --restart always -e PUID=0 -e PGID=0 --name aceprox
 * Shell access whilst the container is running: `docker exec -it acepi /bin/sh`
 * To monitor the logs of the container in realtime: `docker logs -f acepi`
 
+* https://paste.ee/p/9oie9
 * https://paste.ee/p/UqETv
 * https://paste.ee/p/zOKoU
 * https://paste.ee/p/WRjtL
