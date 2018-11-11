@@ -5,7 +5,7 @@ RUN apk add --no-cache curl nano git python2 py-psutil \
     && apk add --no-cache --virtual=build-dependencies g++ gcc make python2-dev build-base \
     && pip install --no-binary gevent gevent \
     && cd /tmp/ \
-    && curl -L https://sybdata.de/files/public-docs/acestream_3.1.33_py2.7.15_webUI_ARMv7.tar.gz -o acestream_rpi.tar.gz \
+    && curl -L https://sybdata.de/data/acestream/acestream_3.1.33_py2.7.15_webUI_ARMv7.tar.gz -o acestream_rpi.tar.gz \
     && tar xzfv acestream_rpi.tar.gz \
     && rm -rf acestream_rpi.tar.gz
 RUN mv /tmp/acestrem.engine/ /
