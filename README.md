@@ -29,7 +29,7 @@ $ docker run --privileged -d --restart always -e PUID=0 -e PGID=0 --name aceprox
 tail -f -n 10 /tmp/acehttp.log
 ```
 ```
-tail -f -n 50 /acestrem.engine/acestream.log
+tail -f -n 50 /acestream.engine/acestream.log
 ```
 
 * To get stats:
