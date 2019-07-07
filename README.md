@@ -16,7 +16,7 @@ $ docker build --build-arg LINK_TO_ACESTREAM='Your_link_to_acestream_3.1.46_Py2.
 
 Run docker image:
 ```
-$ docker run --privileged -d --restart always -e PUID=0 -e PGID=0 --name aceproxy -p 8621:8621 -p 62062:62062 -p 6878:6878 -p 8000:8000 sybdata/acearm
+$ docker run --privileged -d --restart always -e PUID=0 -e PGID=0 --name aceproxy -p 8621:8621 -p 62062:62062 -p 6878:6878 -p 8000:8000 redwid/acearm
 ```
 
 
