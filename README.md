@@ -46,7 +46,10 @@ tail -f -n 50 /var/log/acearm/acestream.log
 ```
 http://[your_docker_ip]:8000/stat
 ```
-
+* To adjust acestream config:
+```
+http://[your_docker_ip]:6878/webui/app/ReplaceMe/server#proxy-server-main
+```
 
 ## Playlist API
 
