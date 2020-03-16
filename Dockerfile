@@ -1,26 +1,32 @@
-FROM lsiobase/alpine.armhf:3.8
+FROM arm32v7/debian:stretch
 
 ARG LINK_TO_ACESTREAM
 
-RUN apk add --no-cache curl nano git python2 py-psutil \
-    && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
-    && python get-pip.py \
-    && apk add --no-cache --virtual=build-dependencies g++ gcc make python2-dev build-base \
-    && pip install --no-binary gevent gevent \
+RUN apt-get update \
+    && apt-get install -y sudo procps curl nano git python2.7 python-pip  \
     && cd /tmp/ \
     && curl -L $LINK_TO_ACESTREAM -o acestream_rpi.tar.gz \
     && tar xzfv acestream_rpi.tar.gz \
-    && rm -rf acestream_rpi.tar.gz
-RUN mv /tmp/acestream.engine/ /
-RUN find /acestream.engine/androidfs/system -type d -exec chmod 755 {} \; \
+    && rm -rf acestream_rpi.tar.gz \
+    && mv /tmp/acestream.engine/ / \
+    && find /acestream.engine/androidfs/system -type d -exec chmod 755 {} \; \
     && find /acestream.engine/androidfs/system -type f -exec chmod 644 {} \; \
     && chmod 755 /acestream.engine/androidfs/system/bin/* /acestream.engine/androidfs/acestream.engine/python/bin/python \
-    && rm -rf /tmp/* \
-    && apk del --purge build-dependencies \
-    && cd / && git clone https://github.com/pepsik-kiev/HTTPAceProxy.git
+    && mkdir /acestream.engine/androidfs/dev \
+    && mknod -m 644 /acestream.engine/androidfs/dev/random c 1 8 \
+    && mknod -m 644 /acestream.engine/androidfs/dev/urandom c 1 9 \
+    && pip install psutil \
+    && pip install --no-binary gevent gevent \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    && cd / \
+    && git clone https://github.com/pepsik-kiev/HTTPAceProxy.git \
+    && sed -i 's:pomoyka.win:91.92.66.82:g' /HTTPAceProxy/plugins/config/torrenttelik.py \
+    && sed -i 's:logfile = None:logfile = "/log/acehttp.log":g' /HTTPAceProxy/aceconfig.py \
+    && sed -i 's:acespawn = False:acespawn = True:g' /HTTPAceProxy/aceconfig.py \
+    && sed -i 's:acecmd = .*:acecmd = "sudo bash /acestream.engine/acestream.start":g' /HTTPAceProxy/aceconfig.py \
+    && sed -i 's:$ACEADDON/acestream.log:/log/acestream.log:g' /acestream.engine/acestream.start
 
 EXPOSE 6878 62062 8621 8000
 
-COPY root/ /
-
-RUN chmod +x /acestream.engine/start.sh
+CMD ["/usr/bin/python2", "/HTTPAceProxy/acehttp.py"]

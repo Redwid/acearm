@@ -11,25 +11,35 @@ Based on android acestream apk
 Build docker image:
 
 ```
-$ docker build --build-arg LINK_TO_ACESTREAM='Your_link_to_acestream_3.1.46_Py2.7.16' -t redwid/acearm .
+$ docker build --build-arg LINK_TO_ACESTREAM='Your_link_to_acestream_3.1.48_Py2.7.16_webUI_ARMv7.tar.gz' -t redwid/acearm:3.1.48 .
 ```
 
 Run docker image:
 ```
-$ docker run --privileged -d --restart always -e PUID=0 -e PGID=0 --name aceproxy -p 8621:8621 -p 62062:62062 -p 6878:6878 -p 8000:8000 redwid/acearm
+docker run -d \
+        --restart=unless-stopped \
+        -e PUID=0 -e PGID=0 \
+        --name aceproxy \
+        -p 8621:8621 \
+        -p 62062:62062 \
+        -p 6878:6878 \
+        -p 8000:8000 \
+        -v /var/log/acearm:/log \
+        redwid/acearm:3.1.48
 ```
 
 
 ## info
 
-* Shell access whilst the container is running: `docker exec -it acepi /bin/sh`
-* To monitor the logs of the container in realtime: `docker logs -f acepi`
+* Shell access whilst the container is running: `docker exec -it $hash /bin/sh`
+* To monitor the logs of the container in realtime: `docker logs -f $hash`
+* Container has volume (/var/log/acearm) for logs, all logs will be stored there:
 
 ```
-tail -f -n 10 /tmp/acehttp.log
+tail -f -n 50 /var/log/acearm/acehttp.log
 ```
 ```
-tail -f -n 50 /acestream.engine/acestream.log
+tail -f -n 50 /var/log/acearm/acestream.log
 ```
 
 * To get stats:
