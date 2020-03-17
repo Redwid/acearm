@@ -1,4 +1,4 @@
-FROM arm32v7/debian:stretch
+FROM arm32v7/debian:stretch-slim
 
 ARG LINK_TO_ACESTREAM
 
