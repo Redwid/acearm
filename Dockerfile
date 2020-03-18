@@ -15,17 +15,21 @@ RUN apt-get update \
     && mkdir /acestream.engine/androidfs/dev \
     && mknod -m 644 /acestream.engine/androidfs/dev/random c 1 8 \
     && mknod -m 644 /acestream.engine/androidfs/dev/urandom c 1 9 \
-    && pip install psutil \
-    && pip install --no-binary gevent gevent \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && cd / \
     && git clone https://github.com/pepsik-kiev/HTTPAceProxy.git \
     && sed -i 's:pomoyka.win:91.92.66.82:g' /HTTPAceProxy/plugins/config/torrenttelik.py \
     && sed -i 's:logfile = None:logfile = "/log/acehttp.log":g' /HTTPAceProxy/aceconfig.py \
     && sed -i 's:acespawn = False:acespawn = True:g' /HTTPAceProxy/aceconfig.py \
     && sed -i 's:acecmd = .*:acecmd = "sudo bash /acestream.engine/acestream.start":g' /HTTPAceProxy/aceconfig.py \
-    && sed -i 's:$ACEADDON/acestream.log:/log/acestream.log:g' /acestream.engine/acestream.start
+    && sed -i 's:$ACEADDON/acestream.log:/log/acestream.log:g' /acestream.engine/acestream.start \
+    && pip install psutil \
+    && pip install --no-binary gevent gevent \
+    && apt-get autoclean \
+    && apt-get autoremove \
+    && apt remove --allow-remove-essential --auto-remove build-essential git rsync libc6-dev openssh-client -y \
+    && apt-get clean \
+    && apt remove --allow-remove-essential apt -y \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 EXPOSE 6878 62062 8621 8000
 
