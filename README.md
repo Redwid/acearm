@@ -2,7 +2,7 @@
 
 
 ## info
-Updated forked from sybdata/acearm version of Acestream + HHTTPAceProxy docker image for Armv7/8
+Updated forked from sybdata/acearm version of Acestream + HTTPAceProxy docker image for x86
 Based on android acestream apk
 
 
@@ -54,5 +54,5 @@ http://[your_docker_ip]:6878/webui/app/ReplaceMe/server#proxy-server-main
 ## Playlist API
 
 ```
-http://[your_docker_ip]:8000/torrent-telik
+http://[your_docker_ip]:8000/ttv
 ```
