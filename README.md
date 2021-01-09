@@ -1,4 +1,4 @@
-# Acestream + HTTPAceProxy for ARMv7/8 Docker Image
+# Acestream + HTTPAceProxy for x86 Docker Image
 
 
 ## info
@@ -11,7 +11,7 @@ Based on android acestream apk
 Build docker image:
 
 ```
-$ docker build --build-arg LINK_TO_ACESTREAM='Your_link_to_acestream_3.1.48_Py2.7.16_webUI_ARMv7.tar.gz' -t redwid/acearm:3.1.48 .
+$ docker build --build-arg LINK_TO_ACESTREAM='Your_link_to_acestream_3.1.48_webUI_x86.tar.gz' -t redwid/ace-x86 .
 ```
 
 Run docker image:
