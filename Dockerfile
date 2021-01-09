@@ -1,9 +1,10 @@
-FROM arm32v7/debian:stretch-slim
+FROM debian:stretch-slim
 
 ARG LINK_TO_ACESTREAM
 
+
 RUN apt-get update \
-    && apt-get install -y sudo procps curl nano git python2.7 python-pip  \
+    && apt-get install -y sudo procps curl nano git python2.7 python-pip \
     && cd /tmp/ \
     && curl -L $LINK_TO_ACESTREAM -o acestream_rpi.tar.gz \
     && tar xzfv acestream_rpi.tar.gz \
@@ -12,17 +13,10 @@ RUN apt-get update \
     && find /acestream.engine/androidfs/system -type d -exec chmod 755 {} \; \
     && find /acestream.engine/androidfs/system -type f -exec chmod 644 {} \; \
     && chmod 755 /acestream.engine/androidfs/system/bin/* /acestream.engine/androidfs/acestream.engine/python/bin/python \
-    && mkdir /acestream.engine/androidfs/dev \
-    && mknod -m 644 /acestream.engine/androidfs/dev/random c 1 8 \
-    && mknod -m 644 /acestream.engine/androidfs/dev/urandom c 1 9 \
     && cd / \
-    && git clone https://github.com/pepsik-kiev/HTTPAceProxy.git \
-    && sed -i 's:pomoyka.win:91.92.66.82:g' /HTTPAceProxy/plugins/config/torrenttelik.py \
-    && sed -i 's:logfile = None:logfile = "/log/acehttp.log":g' /HTTPAceProxy/aceconfig.py \
-    && sed -i 's:acespawn = False:acespawn = True:g' /HTTPAceProxy/aceconfig.py \
-    && sed -i 's:acecmd = .*:acecmd = "sudo bash /acestream.engine/acestream.start":g' /HTTPAceProxy/aceconfig.py \
-    && sed -i 's:$ACEADDON/acestream.log:/log/acestream.log:g' /acestream.engine/acestream.start \
-    && pip install psutil \
+    && git clone https://github.com/Redwid/HTTPAceProxy.git \
+    && sed -i 's:$ACEADDON/acestream.log:/log/acestream.log:g' /acestream.engine/start_acestream_chroot.sh \
+    && pip install psutil sh \
     && pip install --no-binary gevent gevent \
     && apt-get autoclean \
     && apt-get autoremove \
